@@ -14,9 +14,11 @@
 
 @implementation sliderViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _labelText.text = [NSString stringWithFormat:@"%f", _mySlider.value ];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -26,4 +28,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)valueChanged:(id)sender {
+    
+    if (sender == _mySlider) {
+        _labelText.text = [NSString stringWithFormat:@"%f", _mySlider.value ];
+    }
+    
+}
 @end
